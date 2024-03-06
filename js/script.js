@@ -5,6 +5,7 @@ const myMainCarousel = document.querySelector('.my-carousel-images');
 const myThumbnailsCarousel = document.querySelector('.my-thumbnails');
 const myPrev = document.querySelector('.my-previous');
 const myNext = document.querySelector('.my-next');
+let autoplay = setInterval(clickNext, 3000);
 let counter = 0;
 
 const images = [
@@ -52,8 +53,8 @@ images.forEach(image => {
     `
 })
 
-const MainCarouselImages = document.querySelectorAll('.my-carousel-item');
-MainCarouselImages[0].classList.add('active');
+const mainCarouselImages = document.querySelectorAll('.my-carousel-item');
+mainCarouselImages[0].classList.add('active');
 
 // Popoliamo il carosello delle thumbnails
 images.forEach(image => {
@@ -108,6 +109,6 @@ function clickPrev() {
 }
 
 function activeToggle() {
-    MainCarouselImages[counter].classList.toggle('active');
+    mainCarouselImages[counter].classList.toggle('active');
     myThumbnails[counter].classList.toggle('active');
 }
