@@ -3,6 +3,9 @@
 ****************/
 const myMainCarousel = document.querySelector('.my-carousel-images');
 const myThumbnailsCarousel = document.querySelector('.my-thumbnails');
+const myPrev = document.querySelector('.my-previous');
+const myNext = document.querySelector('.my-next');
+let counter = 0;
 
 const images = [
     {
@@ -64,4 +67,39 @@ images.forEach(image => {
 const myThumbnails = document.querySelectorAll('.my-thumbnail');
 myThumbnails[0].classList.add('active');
 
+/***************
+    EVENTS
+****************/
+myNext.addEventListener('click', function() {
+    clickNext();
+})
 
+myPrev.addEventListener('click', function() {
+    clickPrev()
+})
+
+/***************
+    FUNCTIONS
+****************/
+function clickNext() {
+    activeToggle();
+    counter++;
+    if (counter === images.length) {
+        counter = 0;
+    }
+    activeToggle()
+}
+
+function clickPrev() {
+    activeToggle();
+    counter--;
+    if (counter < 0) {
+        counter = images.length - 1;
+    }
+    activeToggle()
+}
+
+function activeToggle() {
+    MainCarouselImages[counter].classList.toggle('active');
+    myThumbnails[counter].classList.toggle('active');
+}
