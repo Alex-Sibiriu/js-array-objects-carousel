@@ -5,6 +5,9 @@ const myMainCarousel = document.querySelector('.my-carousel-images');
 const myThumbnailsCarousel = document.querySelector('.my-thumbnails');
 const myPrev = document.querySelector('.my-previous');
 const myNext = document.querySelector('.my-next');
+const myPrevAuto = document.querySelector('.my-prev-auto ');
+const myStopAuto = document.querySelector('.my-stop-auto ');
+const myNextAuto = document.querySelector('.my-next-auto ');
 let autoplay = setInterval(clickNext, 3000);
 let counter = 0;
 
@@ -37,8 +40,6 @@ const images = [
         description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam.'
     },
 ];
-
-
 
 // Popoliamo il carosello principale
 images.forEach(image => {
@@ -85,6 +86,20 @@ myThumbnails.forEach((thumb, index) => {
         counter = index;
         activeToggle();
     })
+})
+
+myPrevAuto.addEventListener('click', () => {
+    clearInterval(autoplay);
+    autoplay = setInterval(clickPrev, 3000);
+})
+
+myNextAuto.addEventListener('click', () => {
+    clearInterval(autoplay);
+    autoplay = setInterval(clickNext, 3000);
+})
+
+myStopAuto.addEventListener('click', () => {
+    clearInterval(autoplay);
 })
 
 /***************
