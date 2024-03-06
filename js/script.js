@@ -70,12 +70,20 @@ myThumbnails[0].classList.add('active');
 /***************
     EVENTS
 ****************/
-myNext.addEventListener('click', function() {
+myNext.addEventListener('click', () => {
     clickNext();
 })
 
-myPrev.addEventListener('click', function() {
+myPrev.addEventListener('click', () => {
     clickPrev()
+})
+
+myThumbnails.forEach((thumb, index) => {
+    thumb.addEventListener('click', () => {
+        activeToggle();
+        counter = index;
+        activeToggle();
+    })
 })
 
 /***************

@@ -30,17 +30,17 @@ div.my-next{
     padding: 5px;
     background-color: rgba(255, 255, 255, .5);
     z-index: 1;
-    top: 50%;
+    bottom: 6%;
     transform: translateY(-50%);
     cursor: pointer;
 }
 
 div.my-previous{
-    left: 70px;
+    left: 5%;
 }
 
 div.my-next{
-    right: 70px;
+    right: 5%;
 }
 
 div.my-previous > span::after{
