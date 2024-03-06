@@ -74,10 +74,12 @@ myThumbnails[0].classList.add('active');
 ****************/
 myNext.addEventListener('click', () => {
     clickNext();
+    clearInterval(autoplay);
 })
 
 myPrev.addEventListener('click', () => {
     clickPrev()
+    clearInterval(autoplay);
 })
 
 myThumbnails.forEach((thumb, index) => {
@@ -85,6 +87,7 @@ myThumbnails.forEach((thumb, index) => {
         activeToggle();
         counter = index;
         activeToggle();
+        clearInterval(autoplay);
     })
 })
 

@@ -95,6 +95,7 @@ div#my-carousel .my-thumbnails{
 div#my-carousel .my-thumbnails .my-thumbnail{
     filter: brightness(.4);
     width: 20%;
+    cursor: pointer;
 }
 
 div#my-carousel .my-thumbnails .my-thumbnail img{
