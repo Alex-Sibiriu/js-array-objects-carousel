@@ -1,3 +1,9 @@
+/***************
+    ELEMENTS
+****************/
+const myMainCarousel = document.querySelector('.my-carousel-images');
+const myThumbnailsCarousel = document.querySelector('.my-thumbnails');
+
 const images = [
     {
         url: 'http://www.viaggiareonline.it/wp-content/uploads/2014/11/sweden_148857365.jpg',
@@ -27,4 +33,35 @@ const images = [
         description: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam.'
     },
 ];
+
+
+
+// Popoliamo il carosello principale
+images.forEach(image => {
+    myMainCarousel.innerHTML += `
+    <div class="my-carousel-item">
+    <img class="img-fluid" src=${image.url} alt="${image.title} picture">
+    <div class="item-description px-3">
+    <h2>${image.title}</h2>
+    <p>${image.description}</p>
+    </div>
+    </div>
+    `
+})
+
+const MainCarouselImages = document.querySelectorAll('.my-carousel-item');
+MainCarouselImages[0].classList.add('active');
+
+// Popoliamo il carosello delle thumbnails
+images.forEach(image => {
+    myThumbnailsCarousel.innerHTML += `
+    <div class="my-thumbnail">
+        <img class="img-fluid" src=${image.url} alt="Thumbnail of ${image.title} picture">
+    </div>
+    `
+})
+
+const myThumbnails = document.querySelectorAll('.my-thumbnail');
+myThumbnails[0].classList.add('active');
+
 
